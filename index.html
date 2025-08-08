@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Chill</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-container"></div>
+    
+    <main class="container-principal">
+        <header class="header">
+            <div class="mode-toggle">
+                <button id="pomodoro-mode">Pomodoro</button>
+                <button id="short-break">Short Break</button>
+                <button id="long-break">Long Break</button>
+            </div>
+        </header>
+
+        <section class="relogio">
+            <p class="timer-label">Timer</p>
+            <h2 id="cronometro">00:00</h2>
+            <div class="controles">
+                <button id="resetar">Reset</button>
+                <button id="iniciar">Start</button>
+            </div>
+            <p class="copyright">Made By Annaely Oliveira with love ♡</p>
+        </section>
+
+        <div class="configuracoes-tempo">
+            <div class="input-grupo">
+                <label for="tempoFoco">Tempo de Foco (minutos):</label>
+                <input type="number" id="tempoFoco" value="25">
+            </div>
+            <div class="input-grupo">
+                <label for="tempoIntervalo">Tempo de Intervalo (minutos):</label>
+                <input type="number" id="tempoIntervalo" value="5">
+            </div>
+        </div>
+    </main>
+
+    <section class="tempo-total">
+        <h3>Tempo Total de Foco: <span id="horasFoco">0</span> horas</h3>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

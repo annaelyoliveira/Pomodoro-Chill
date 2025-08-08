@@ -1,0 +1,268 @@
+/*
+    ======================================
+    Estilos Gerais e Variáveis
+    ======================================
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --cor-primaria: #ffffff;
+    --cor-texto: #e0e0e0;
+    --sombra-caixa: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+}
+
+/*
+    ======================================
+    Imagem de Fundo
+    ======================================
+*/
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background-foco.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: brightness(0.8);
+    transition: background-image 0.5s ease;
+}
+
+
+/*
+    ======================================
+    Contêiner Principal (o "cartão" central)
+    ======================================
+*/
+.container-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem 4rem;
+    box-shadow: var(--sombra-caixa);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-bottom: 2rem;
+}
+
+
+/*
+    ======================================
+    Header e Controles de Modo
+    ======================================
+*/
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.mode-toggle {
+    display: flex;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 0.5rem;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.mode-toggle button {
+    background: transparent;
+    border: none;
+    border-radius: 15px;
+    padding: 0.5rem 1rem;
+    color: var(--cor-primaria);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mode-toggle button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.mode-toggle button.active {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+/*
+    ======================================
+    Relógio (Cronômetro)
+    ======================================
+*/
+.relogio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer-label {
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+    margin-bottom: 0.5rem;
+}
+
+#cronometro {
+    font-size: 6rem;
+    font-weight: 600;
+    color: var(--cor-primaria);
+    margin-bottom: 1rem;
+}
+
+.controles {
+    margin-top: 1rem;
+}
+
+.controles button {
+    background-color: transparent;
+    border: 1px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+    border-radius: 20px;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 0.5rem;
+}
+
+.controles button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/*
+    ======================================
+    Controles de Tempo (inputs) - Escondidos
+    ======================================
+*/
+.configuracoes-tempo {
+    display: none;
+}
+
+.input-grupo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-grupo label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.input-grupo input {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--cor-primaria);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    width: 120px;
+    color: var(--cor-primaria);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+/*
+    ======================================
+    Tempo Total
+    ======================================
+*/
+.tempo-total {
+    text-align: center;
+}
+
+.tempo-total h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--cor-primaria);
+}
+
+
+/*
+    ======================================
+    Media Queries para Telas Menores (Dispositivos Móveis)
+    ======================================
+*/
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .container-principal {
+        padding: 1rem;
+        max-width: 90%;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .mode-toggle {
+        flex-direction: column; /* Coloca os botões um em cima do outro */
+        width: 100%;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+    
+    .mode-toggle button {
+        width: 100%;
+    }
+
+    #cronometro {
+        font-size: 4rem; /* Reduz o tamanho da fonte do cronômetro */
+    }
+
+    .controles button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .tempo-total h3 {
+        font-size: 1rem;
+    }
+}
