@@ -1,8 +1,3 @@
-/*
-    ======================================
-    Estilos Gerais e Variáveis
-    ======================================
-*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root {
@@ -29,11 +24,6 @@ body {
     position: relative;
 }
 
-/*
-    ======================================
-    Imagem de Fundo
-    ======================================
-*/
 .background-container {
     position: fixed;
     top: 0;
@@ -48,12 +38,6 @@ body {
     transition: background-image 0.5s ease;
 }
 
-
-/*
-    ======================================
-    Contêiner Principal (o "cartão" central)
-    ======================================
-*/
 .container-principal {
     display: flex;
     flex-direction: column;
@@ -69,12 +53,6 @@ body {
     margin-bottom: 2rem;
 }
 
-
-/*
-    ======================================
-    Header e Controles de Modo
-    ======================================
-*/
 .header {
     display: flex;
     justify-content: center;
@@ -111,12 +89,6 @@ body {
     background: rgba(255, 255, 255, 0.5);
 }
 
-
-/*
-    ======================================
-    Relógio (Cronômetro)
-    ======================================
-*/
 .relogio {
     display: flex;
     flex-direction: column;
@@ -163,12 +135,6 @@ body {
     color: rgba(255, 255, 255, 0.7);
 }
 
-
-/*
-    ======================================
-    Controles de Tempo (inputs) - Escondidos
-    ======================================
-*/
 .configuracoes-tempo {
     display: none;
 }
@@ -205,12 +171,6 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-
-/*
-    ======================================
-    Tempo Total
-    ======================================
-*/
 .tempo-total {
     text-align: center;
 }
@@ -221,12 +181,6 @@ input[type="number"] {
     color: var(--cor-primaria);
 }
 
-
-/*
-    ======================================
-    Media Queries para Telas Menores (Dispositivos Móveis)
-    ======================================
-*/
 @media (max-width: 768px) {
     body {
         padding: 1rem;
@@ -243,7 +197,7 @@ input[type="number"] {
     }
     
     .mode-toggle {
-        flex-direction: column; /* Coloca os botões um em cima do outro */
+        flex-direction: column; 
         width: 100%;
         gap: 0.5rem;
         padding: 0.5rem;
@@ -254,7 +208,7 @@ input[type="number"] {
     }
 
     #cronometro {
-        font-size: 4rem; /* Reduz o tamanho da fonte do cronômetro */
+        font-size: 4rem; 
     }
 
     .controles button {

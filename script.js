@@ -1,30 +1,25 @@
-// Passo 1: Selecionar os Elementos HTML
 const cronometroDisplay = document.getElementById('cronometro');
 const iniciarBtn = document.getElementById('iniciar');
 const resetarBtn = document.getElementById('resetar');
 const horasFocoDisplay = document.getElementById('horasFoco');
 const backgroundContainer = document.querySelector('.background-container');
 
-// Botões de modo
 const pomodoroBtn = document.getElementById('pomodoro-mode');
 const shortBreakBtn = document.getElementById('short-break');
 const longBreakBtn = document.getElementById('long-break');
 
-// Passo 2: Variáveis de Estado
 let tempoTotalSegundos = 0;
 let tempoInicialShortBreak = 5 * 60;
 let tempoInicialLongBreak = 15 * 60;
 let estadoAtual = 'pomodoro';
 let estaRodando = false;
 let intervalId;
-let horasFocoAcumuladas = 0; // CORREÇÃO: Inicializa com 0.
+let horasFocoAcumuladas = 0; 
 
-// Configura os caminhos das imagens de fundo
 const fundoFoco = 'url("assets/background-foco.jpg")';
 const fundoShortBreak = 'url("assets/background-short-break.png")'; 
 const fundoLongBreak = 'url("assets/background-long-break.jpeg")'; 
 
-// Passo 3: Funções do Cronômetro
 
 function iniciarCronometro() {
     if (estaRodando) return;
@@ -58,7 +53,7 @@ function resetarCronometro() {
       tempoTotalSegundos = 0;
     } else if (estadoAtual === 'short-break') {
       tempoTotalSegundos = tempoInicialShortBreak;
-    } else { // long-break
+    } else { 
       tempoTotalSegundos = tempoInicialLongBreak;
     }
     atualizarDisplay();
@@ -93,7 +88,6 @@ function mudarModo(novoModo) {
     atualizarDisplay();
 }
 
-// Passo 4: Adicionar os Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
     mudarModo('pomodoro');
     horasFocoDisplay.textContent = horasFocoAcumuladas.toFixed(2);
