@@ -20,9 +20,9 @@ let intervalId;
 let horasFocoAcumuladas = 0; // CORREÇÃO: Inicializa com 0.
 
 // Configura os caminhos das imagens de fundo
-const fundoFoco = 'url("background-foco.jpg")';
-const fundoShortBreak = 'url("background-short-break.png")'; 
-const fundoLongBreak = 'url("background-long-break.jpeg")'; 
+const fundoFoco = 'url("assets/background-foco.jpg")';
+const fundoShortBreak = 'url("assets/background-short-break.png")'; 
+const fundoLongBreak = 'url("assets/background-long-break.jpeg")'; 
 
 // Passo 3: Funções do Cronômetro
 
