@@ -171,15 +171,6 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-.tempo-total {
-    text-align: center;
-}
-
-.tempo-total h3 {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: var(--cor-primaria);
-}
 
 @media (max-width: 768px) {
     body {
@@ -216,7 +207,4 @@ input[type="number"] {
         font-size: 0.9rem;
     }
 
-    .tempo-total h3 {
-        font-size: 1rem;
-    }
 }
