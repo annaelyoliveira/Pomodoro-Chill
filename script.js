@@ -1,7 +1,6 @@
 const cronometroDisplay = document.getElementById('cronometro');
 const iniciarBtn = document.getElementById('iniciar');
 const resetarBtn = document.getElementById('resetar');
-const horasFocoDisplay = document.getElementById('horasFoco');
 const backgroundContainer = document.querySelector('.background-container');
 
 const pomodoroBtn = document.getElementById('pomodoro-mode');
@@ -14,12 +13,10 @@ let tempoInicialLongBreak = 15 * 60;
 let estadoAtual = 'pomodoro';
 let estaRodando = false;
 let intervalId;
-let horasFocoAcumuladas = 0; 
 
 const fundoFoco = 'url("assets/background-foco.jpg")';
 const fundoShortBreak = 'url("assets/background-short-break.png")'; 
 const fundoLongBreak = 'url("assets/background-long-break.jpeg")'; 
-
 
 function iniciarCronometro() {
     if (estaRodando) return;
@@ -63,7 +60,6 @@ function atualizarDisplay() {
     const minutos = Math.floor(tempoTotalSegundos / 60).toString().padStart(2, '0');
     const segundos = (tempoTotalSegundos % 60).toString().padStart(2, '0');
     cronometroDisplay.textContent = `${minutos}:${segundos}`;
-    horasFocoDisplay.textContent = horasFocoAcumuladas.toFixed(2);
 }
 
 function mudarModo(novoModo) {
@@ -90,7 +86,6 @@ function mudarModo(novoModo) {
 
 document.addEventListener('DOMContentLoaded', () => {
     mudarModo('pomodoro');
-    horasFocoDisplay.textContent = horasFocoAcumuladas.toFixed(2);
 
     iniciarBtn.addEventListener('click', () => {
         if (estaRodando) {
